@@ -1,9 +1,12 @@
+import 'package:flutter_redux_provider/main.dart';
 import 'package:flutter_redux_provider/redux/action.dart';
 import 'package:flutter_redux_provider/redux/state.dart';
 
 AppState appReducer(AppState prevState, action) {
   if (action is AddName) {
-    return AppState(name: action.name);
+    AppState ret = AppState(name: action.name);
+    logger.info(ret.hobby);
+    return ret;
   }
 
   if (action is AddAge) {

@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_provider/notifier/my_app_view_model.dart';
 import 'package:flutter_redux_provider/redux/reducer.dart';
 import 'package:flutter_redux_provider/redux/state.dart';
 import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
-import 'package:flutter_redux/flutter_redux.dart';
+import 'package:simple_logger/simple_logger.dart';
+
+final logger = SimpleLogger();
 
 void main() {
+  logger.setLevel(
+    Level.ALL,
+    includeCallerInfo: true,
+  );
   Provider.debugCheckInvalidValueType = null;
   runApp(MyApp());
 }
